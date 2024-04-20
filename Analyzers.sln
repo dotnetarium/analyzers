@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analyzers", "Analyzers\Analyzers\Analyzers.csproj", "{999737B1-83D2-48B4-91BE-01426F53247C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analyzers.CodeFixes", "Analyzers\Analyzers.CodeFixes\Analyzers.CodeFixes.csproj", "{6D2372E9-1805-425C-873E-88FA6CACFAC4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analyzers.Package", "Analyzers\Analyzers.Package\Analyzers.Package.csproj", "{64DA5928-49CF-46DD-B792-07390DFE35B5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analyzers.Test", "Analyzers\Analyzers.Test\Analyzers.Test.csproj", "{7DDCA94D-7664-4DA5-B0AA-E89B6497B1B6}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FlowAnalysis.Utilities", "Analyzers\Utilities\FlowAnalysis\FlowAnalysis.Utilities.shproj", "{FCB56CBA-FA35-46A8-86B7-BAE5433197D9}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Workspaces.Utilities", "Analyzers\Utilities\Workspaces\Workspaces.Utilities.shproj", "{99F594B1-3916-471D-A761-A6731FC50E9A}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Analyzer.Utilities", "Analyzers\Utilities\Compiler\Analyzer.Utilities.shproj", "{EC946164-1E17-410B-B7D9-7DE7E6268D63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{5AC0F80F-297F-45DF-9F0E-46F6B5E33D25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{999737B1-83D2-48B4-91BE-01426F53247C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{999737B1-83D2-48B4-91BE-01426F53247C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{999737B1-83D2-48B4-91BE-01426F53247C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{999737B1-83D2-48B4-91BE-01426F53247C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D2372E9-1805-425C-873E-88FA6CACFAC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D2372E9-1805-425C-873E-88FA6CACFAC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D2372E9-1805-425C-873E-88FA6CACFAC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D2372E9-1805-425C-873E-88FA6CACFAC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64DA5928-49CF-46DD-B792-07390DFE35B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64DA5928-49CF-46DD-B792-07390DFE35B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64DA5928-49CF-46DD-B792-07390DFE35B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64DA5928-49CF-46DD-B792-07390DFE35B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DDCA94D-7664-4DA5-B0AA-E89B6497B1B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DDCA94D-7664-4DA5-B0AA-E89B6497B1B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DDCA94D-7664-4DA5-B0AA-E89B6497B1B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DDCA94D-7664-4DA5-B0AA-E89B6497B1B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FCB56CBA-FA35-46A8-86B7-BAE5433197D9} = {5AC0F80F-297F-45DF-9F0E-46F6B5E33D25}
+		{99F594B1-3916-471D-A761-A6731FC50E9A} = {5AC0F80F-297F-45DF-9F0E-46F6B5E33D25}
+		{EC946164-1E17-410B-B7D9-7DE7E6268D63} = {5AC0F80F-297F-45DF-9F0E-46F6B5E33D25}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9CD8C951-824E-4C5F-A655-CE069864BC9F}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Analyzers\Utilities\Compiler\Analyzer.Utilities.projitems*{999737b1-83d2-48b4-91be-01426f53247c}*SharedItemsImports = 5
+		Analyzers\Utilities\FlowAnalysis\FlowAnalysis.Utilities.projitems*{999737b1-83d2-48b4-91be-01426f53247c}*SharedItemsImports = 5
+		Analyzers\Utilities\Workspaces\Workspaces.Utilities.projitems*{999737b1-83d2-48b4-91be-01426f53247c}*SharedItemsImports = 5
+		Analyzers\Utilities\Workspaces\Workspaces.Utilities.projitems*{99f594b1-3916-471d-a761-a6731fc50e9a}*SharedItemsImports = 13
+		Analyzers\Utilities\Compiler\Analyzer.Utilities.projitems*{ec946164-1e17-410b-b7d9-7de7e6268d63}*SharedItemsImports = 13
+		Analyzers\Utilities\FlowAnalysis\FlowAnalysis.Utilities.projitems*{fcb56cba-fa35-46a8-86b7-bae5433197d9}*SharedItemsImports = 13
+	EndGlobalSection
+EndGlobal
