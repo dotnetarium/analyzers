@@ -19,6 +19,10 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Analyzer.Utilities", "Analy
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{5AC0F80F-297F-45DF-9F0E-46F6B5E33D25}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestReferenceAssembly", "Analyzers\TestReferenceAssembly\TestReferenceAssembly.csproj", "{204A1640-A6B2-4F9D-9314-EDB5CF306C4D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Utilities", "Analyzers\Test.Utilities\Test.Utilities.csproj", "{670546C2-5D01-4E3B-9D9F-C6511BC9BD76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,14 @@ Global
 		{7DDCA94D-7664-4DA5-B0AA-E89B6497B1B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DDCA94D-7664-4DA5-B0AA-E89B6497B1B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DDCA94D-7664-4DA5-B0AA-E89B6497B1B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{204A1640-A6B2-4F9D-9314-EDB5CF306C4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{204A1640-A6B2-4F9D-9314-EDB5CF306C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{204A1640-A6B2-4F9D-9314-EDB5CF306C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{204A1640-A6B2-4F9D-9314-EDB5CF306C4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{670546C2-5D01-4E3B-9D9F-C6511BC9BD76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670546C2-5D01-4E3B-9D9F-C6511BC9BD76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{670546C2-5D01-4E3B-9D9F-C6511BC9BD76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{670546C2-5D01-4E3B-9D9F-C6511BC9BD76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +66,8 @@ Global
 		SolutionGuid = {9CD8C951-824E-4C5F-A655-CE069864BC9F}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Analyzers\Utilities\Compiler\Analyzer.Utilities.projitems*{670546c2-5d01-4e3b-9d9f-c6511bc9bd76}*SharedItemsImports = 5
+		Analyzers\Utilities\Workspaces\Workspaces.Utilities.projitems*{670546c2-5d01-4e3b-9d9f-c6511bc9bd76}*SharedItemsImports = 5
 		Analyzers\Utilities\Compiler\Analyzer.Utilities.projitems*{999737b1-83d2-48b4-91be-01426f53247c}*SharedItemsImports = 5
 		Analyzers\Utilities\FlowAnalysis\FlowAnalysis.Utilities.projitems*{999737b1-83d2-48b4-91be-01426f53247c}*SharedItemsImports = 5
 		Analyzers\Utilities\Workspaces\Workspaces.Utilities.projitems*{999737b1-83d2-48b4-91be-01426f53247c}*SharedItemsImports = 5

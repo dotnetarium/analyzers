@@ -20,6 +20,7 @@
   <ItemGroup>
     <Compile Update="Resources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="Resources.resx" />
     <EmbeddedResource Update="Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
+    <InternalsVisibleTo Include="Analyzers.Test" />
   </ItemGroup>
 
   <Import Project="..\Utilities\Compiler\Analyzer.Utilities.projitems" Label="Shared" />
