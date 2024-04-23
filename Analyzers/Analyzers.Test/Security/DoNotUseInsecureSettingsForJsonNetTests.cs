@@ -1343,10 +1343,10 @@ class Blah
         [Theory]
         [InlineData("")]
         [InlineData("dotnet_code_quality.excluded_symbol_names = Method")]
-        [InlineData(@"dotnet_code_quality.CA2327.excluded_symbol_names = Method
-                      dotnet_code_quality.CA2328.excluded_symbol_names = Method")]
-        [InlineData(@"dotnet_code_quality.CA2327.excluded_symbol_names = Met*
-                      dotnet_code_quality.CA2328.excluded_symbol_names = Met*")]
+        [InlineData(@"dotnet_code_quality.DN2327.excluded_symbol_names = Method
+                      dotnet_code_quality.DN2328.excluded_symbol_names = Method")]
+        [InlineData(@"dotnet_code_quality.DN2327.excluded_symbol_names = Met*
+                      dotnet_code_quality.DN2328.excluded_symbol_names = Met*")]
         [InlineData("dotnet_code_quality.dataflow.excluded_symbol_names = Method")]
         public async Task EditorConfigConfiguration_ExcludedSymbolNamesWithValueOptionAsync(string editorConfigText)
         {

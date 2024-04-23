@@ -295,7 +295,7 @@ class TestClass
         }
 
         [Theory]
-        [InlineData("dotnet_code_quality.CA5393.unsafe_DllImportSearchPath_bits = 2048")]
+        [InlineData("dotnet_code_quality.DN5393.unsafe_DllImportSearchPath_bits = 2048")]
         public async Task EditorConfigConfiguration_UnsafeDllImportSearchPathBits_NonDefaultValue_DiagnosticAsync(string editorConfigText)
         {
             await new VerifyCS.Test
@@ -334,7 +334,7 @@ class TestClass
         }
 
         [Theory]
-        [InlineData("dotnet_code_quality.CA5393.unsafe_DllImportSearchPath_bits = 1026")]
+        [InlineData("dotnet_code_quality.DN5393.unsafe_DllImportSearchPath_bits = 1026")]
         public async Task EditorConfigConfiguration_UnsafeDllImportSearchPathBits_BitwiseCombination_DiagnosticAsync(string editorConfigText)
         {
             await new VerifyCS.Test
@@ -448,7 +448,7 @@ class TestClass
         }
 
         [Theory]
-        [InlineData("dotnet_code_quality.CA5393.unsafe_DllImportSearchPath_bits = 2048")]
+        [InlineData("dotnet_code_quality.DN5393.unsafe_DllImportSearchPath_bits = 2048")]
         public async Task EditorConfigConfiguration_UnsafeDllImportSearchPathBits_NonDefaultValue_NoDiagnosticAsync(string editorConfigText)
         {
             await new VerifyCS.Test

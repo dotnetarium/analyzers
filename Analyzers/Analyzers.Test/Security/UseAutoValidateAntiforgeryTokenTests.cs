@@ -436,7 +436,7 @@ class TestClass : ControllerBase
                     AnalyzerConfigFiles = { ("/.editorconfig", @"root = true
 
 [*]
-dotnet_code_quality.CA5391.exclude_aspnet_core_mvc_controllerbase = false") }
+dotnet_code_quality.DN5391.exclude_aspnet_core_mvc_controllerbase = false") }
                 },
             };
 

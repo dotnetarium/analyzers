@@ -596,10 +596,10 @@ namespace Blah
         [Theory]
         [InlineData("")]
         [InlineData("dotnet_code_quality.excluded_symbol_names = Des")]
-        [InlineData(@"dotnet_code_quality.CA2321.excluded_symbol_names = Des
-                      dotnet_code_quality.CA2322.excluded_symbol_names = Des")]
-        [InlineData(@"dotnet_code_quality.CA2321.excluded_symbol_names = D*
-                      dotnet_code_quality.CA2322.excluded_symbol_names = D*")]
+        [InlineData(@"dotnet_code_quality.DN2321.excluded_symbol_names = Des
+                      dotnet_code_quality.DN2322.excluded_symbol_names = Des")]
+        [InlineData(@"dotnet_code_quality.DN2321.excluded_symbol_names = D*
+                      dotnet_code_quality.DN2322.excluded_symbol_names = D*")]
         [InlineData("dotnet_code_quality.dataflow.excluded_symbol_names = Des")]
         public async Task EditorConfigConfiguration_ExcludedSymbolNamesWithValueOptionAsync(string editorConfigText)
         {

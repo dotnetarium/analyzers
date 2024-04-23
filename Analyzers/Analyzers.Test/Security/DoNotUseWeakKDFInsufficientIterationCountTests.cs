@@ -405,10 +405,10 @@ class TestClass
         [Theory]
         [InlineData("")]
         [InlineData("dotnet_code_quality.excluded_symbol_names = TestMethod")]
-        [InlineData(@"dotnet_code_quality.CA5387.excluded_symbol_names = TestMethod
-                      dotnet_code_quality.CA5388.excluded_symbol_names = TestMethod")]
-        [InlineData(@"dotnet_code_quality.CA5387.excluded_symbol_names = TestMet*
-                      dotnet_code_quality.CA5388.excluded_symbol_names = TestMet*")]
+        [InlineData(@"dotnet_code_quality.DN5387.excluded_symbol_names = TestMethod
+                      dotnet_code_quality.DN5388.excluded_symbol_names = TestMethod")]
+        [InlineData(@"dotnet_code_quality.DN5387.excluded_symbol_names = TestMet*
+                      dotnet_code_quality.DN5388.excluded_symbol_names = TestMet*")]
         [InlineData("dotnet_code_quality.dataflow.excluded_symbol_names = TestMethod")]
         public async Task EditorConfigConfiguration_ExcludedSymbolNamesWithValueOptionAsync(string editorConfigText)
         {
