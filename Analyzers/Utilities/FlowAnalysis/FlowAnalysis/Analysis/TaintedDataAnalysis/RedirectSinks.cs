@@ -41,6 +41,88 @@ namespace Analyzer.Utilities.FlowAnalysis.Analysis.TaintedDataAnalysis
                     ( "RedirectToRoutePermanent", new[] { "routeName" }),
                 });
 
+            builder.AddSinkInfo(
+                WellKnownTypeNames.MicrosoftAspNetCoreHttpHttpResponse,
+                SinkKind.Redirect,
+                isInterface: false,
+                isAnyStringParameterInConstructorASink: false,
+                sinkProperties: null,
+                sinkMethodParameters: new[] {
+                    ( "Redirect", new[] { "location" }),
+                });
+
+            builder.AddSinkInfo(
+                WellKnownTypeNames.SystemWebHttpApiController,
+                SinkKind.Redirect,
+                isInterface: false,
+                isAnyStringParameterInConstructorASink: false,
+                sinkProperties: null,
+                sinkMethodParameters: new[] {
+                    ( "Redirect", new[] { "location" }),
+                });
+
+            builder.AddSinkInfo(
+                WellKnownTypeNames.SystemWebMvcController,
+                SinkKind.Redirect,
+                isInterface: false,
+                isAnyStringParameterInConstructorASink: false,
+                sinkProperties: null,
+                sinkMethodParameters: new[] {
+                    ( "Redirect", new[] { "url" }),
+                    ( "RedirectPermanent", new[] { "url" }),
+                });
+
+            builder.AddSinkInfo(
+                WellKnownTypeNames.MicrosoftAspNetCoreMvcControllerBase,
+                SinkKind.Redirect,
+                isInterface: false,
+                isAnyStringParameterInConstructorASink: false,
+                sinkProperties: null,
+                sinkMethodParameters: new[] {
+                    ( "Redirect", new[] { "url" }),
+                    ( "RedirectPermanent", new[] { "url" }),
+                    ( "RedirectPreserveMethod", new[] { "url" }),
+                    ( "RedirectPermanentPreserveMethod", new[] { "url" }),
+                });
+
+            builder.AddSinkInfo(
+                WellKnownTypeNames.MicrosoftAspNetCoreMvcRazorPagesPageModel,
+                SinkKind.Redirect,
+                isInterface: false,
+                isAnyStringParameterInConstructorASink: false,
+                sinkProperties: null,
+                sinkMethodParameters: new[] {
+                    ( "Redirect", new[] { "url" }),
+                    ( "RedirectPermanent", new[] { "url" }),
+                    ( "RedirectPreserveMethod", new[] { "url" }),
+                    ( "RedirectPermanentPreserveMethod", new[] { "url" }),
+                });
+
+            builder.AddSinkInfo(
+                WellKnownTypeNames.SystemWebMvcRedirectResult,
+                SinkKind.Redirect,
+                isInterface: false,
+                isAnyStringParameterInConstructorASink: false,
+                sinkProperties: new[] {
+                    "Url" 
+                },
+                sinkMethodParameters: new[] {
+                    ( ".ctor", new[] { "url" }),
+                });
+
+            builder.AddSinkInfo(
+                WellKnownTypeNames.MicrosoftAspNetCoreMvcRedirectResult,
+                SinkKind.Redirect,
+                isInterface: false,
+                isAnyStringParameterInConstructorASink: false,
+                sinkProperties: new[] {
+                    "Url"
+                },
+                sinkMethodParameters: new[] {
+                    ( ".ctor", new[] { "url" }),
+                });
+            
+
             SinkInfos = builder.ToImmutableAndFree();
         }
     }

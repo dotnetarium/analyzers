@@ -622,6 +622,35 @@ namespace Analyzer.Utilities
         public const string XunitFactAttribute = "Xunit.FactAttribute";
         public const string XunitSdkDataAttribute = "Xunit.Sdk.DataAttribute";
         public const string XunitTraitAttribute = "Xunit.TraitAttribute";
+ 
 
+        // additional SQL Type Names
+        public const string SystemDataEntityDbSet = "System.Data.Entity.DbSet";
+        public const string SystemDataLinqDataContext = "System.Data.Linq.DataContext";
+        public const string MySqlDataMySqlClientMySqlHelper = "MySql.Data.MySqlClient.MySqlHelper";
+        public const string SystemDataSQLiteSQLiteCommand = "System.Data.SQLite.SQLiteCommand";
+        public const string SystemDataEntityDatabase = "System.Data.Entity.Database";
+        public const string MicrosoftEntityFrameworkCoreRelationalDatabaseFacadeExtensions = "Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions";
+        public const string MicrosoftPracticesEnterpriseLibraryDataDatabase = "Microsoft.Practices.EnterpriseLibrary.Data.Database";
+        public const string NHibernateISession = "NHibernate.ISession";
+        public const string CassandraISession = "Cassandra.ISession";
+
+        // additional XPath Type Names
+        public const string SystemXmlXPathExtensions = "System.Xml.XPath.Extensions";
+
+        // additional Redirect Type Names
+        public const string MicrosoftAspNetCoreHttpHttpResponse = "Microsoft.AspNetCore.Http.HttpResponse";
+        public const string SystemWebHttpApiController = "System.Web.Http.ApiController";
+        public const string MicrosoftAspNetCoreMvcRazorPagesPageModel = "Microsoft.AspNetCore.Mvc.RazorPages.PageModel";
+        public const string SystemWebMvcRedirectResult = "System.Web.Mvc.RedirectResult";
+        public const string MicrosoftAspNetCoreMvcRedirectResult = "Microsoft.AspNetCore.Mvc.RedirectResult";
+
+        // additional FilePath Type Names
+        public const string SystemIOStreamReader = "System.IO.StreamReader";
+        public const string SystemIOStreamWriter = "System.IO.StreamWriter";
+        public const string SystemWebMvcFilePathResult = "System.Web.Mvc.FilePathResult";
+        public const string MicrosoftAspNetCoreMvcPhysicalFileResult = "Microsoft.AspNetCore.Mvc.PhysicalFileResult";
+        public const string SystemWebUIWebControlsFileUpload = "System.Web.UI.WebControls.FileUpload";
+        public const string SystemNetWebClient = "System.Net.WebClient";
     }
 }

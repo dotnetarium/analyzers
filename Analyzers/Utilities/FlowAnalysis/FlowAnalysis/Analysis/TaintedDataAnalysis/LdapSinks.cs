@@ -33,13 +33,17 @@ namespace Analyzer.Utilities.FlowAnalysis.Analysis.TaintedDataAnalysis
                 sinkProperties: new[] {
                     "Filter",
                 },
-                sinkMethodParameters: null);
+                sinkMethodParameters: new[] {
+                    (".ctor", new[] { "filter" } ),
+                });
             builder.AddSinkInfo(
                 WellKnownTypeNames.SystemDirectoryDirectoryEntry,
                 SinkKind.Ldap,
                 isInterface: false,
                 isAnyStringParameterInConstructorASink: false,
-                sinkProperties: null,
+                sinkProperties: new[] {
+                    "Path",    
+                },
                 sinkMethodParameters: new[] {
                     (".ctor", new[] { "path", "adsObject" } ),
                 });

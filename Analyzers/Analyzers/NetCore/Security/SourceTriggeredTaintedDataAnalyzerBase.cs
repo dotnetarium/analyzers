@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using Analyzer.Utilities;
@@ -45,7 +46,9 @@ namespace Microsoft.NetCore.Analyzers.Security
 
         public override void Initialize(AnalysisContext context)
         {
-            context.EnableConcurrentExecution();
+            if (!Debugger.IsAttached)
+                context.EnableConcurrentExecution();
+
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze | GeneratedCodeAnalysisFlags.ReportDiagnostics);
 
             context.RegisterCompilationStartAction(
