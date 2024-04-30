@@ -63,7 +63,6 @@ namespace Analyzer.Utilities.FlowAnalysis.Analysis.TaintedDataAnalysis
                     ( "WriteAllLinesAsync", new[] { "path" } ),
                     ( "WriteAllText", new[] { "path" } ),
                     ( "WriteAllTextAsync", new[] { "path" } ),
-                    ( "OpenText", new[] { "path" } ),
                     ( "Replace", new[] { "sourceFileName", "destinationFileName", "destinationBackupFileName" } ),
                     ( "SetAccessControl", new[] { "path" } ),
                 });

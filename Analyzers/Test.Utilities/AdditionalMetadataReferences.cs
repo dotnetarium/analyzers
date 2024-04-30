@@ -20,11 +20,14 @@ namespace Test.Utilities
 
         public static ReferenceAssemblies DefaultForTaintedDataAnalysis { get; } = ReferenceAssemblies.NetFramework.Net472.Default
             .AddAssemblies(ImmutableArray.Create("PresentationFramework", "System.Web", "System.Web.Extensions", "System.Xaml"))
-            .AddPackages(ImmutableArray.Create(
+            .AddPackages(
+            [
                 new PackageIdentity("System.DirectoryServices", "6.0.1"),
                 new PackageIdentity("AntiXSS", "4.3.0"),
                 new PackageIdentity("Microsoft.AspNetCore.Mvc", "2.2.0"),
-                new PackageIdentity("Microsoft.EntityFrameworkCore.Relational", "2.0.3")));
+                new PackageIdentity("Microsoft.EntityFrameworkCore.Relational", "2.0.3"),
+                new PackageIdentity("CassandraCSharpDriver", "3.20.1"),
+            ]);
 
         public static ReferenceAssemblies DefaultWithSerialization { get; } = ReferenceAssemblies.NetFramework.Net472.Default
             .AddAssemblies(ImmutableArray.Create("System.Runtime.Serialization"));

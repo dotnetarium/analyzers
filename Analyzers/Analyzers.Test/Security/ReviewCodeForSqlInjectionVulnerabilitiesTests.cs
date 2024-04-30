@@ -1,7 +1,10 @@
 ﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the MIT license.  See License.txt in the project root for license information.
 
+using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Data;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Testing;
 using Test.Utilities;
@@ -13,6 +16,89 @@ namespace Microsoft.NetCore.Analyzers.Security.UnitTests
     public class ReviewCodeForSqlInjectionVulnerabilitiesTests : TaintedDataAnalyzerTestBase<ReviewCodeForSqlInjectionVulnerabilities, ReviewCodeForSqlInjectionVulnerabilities>
     {
         protected override DiagnosticDescriptor Rule => ReviewCodeForSqlInjectionVulnerabilities.Rule;
+
+
+        [Theory]
+        [InlineData("SELECT * FROM Products WHERE name = '\" + name + \"';", 18, 13, 16, 27)]
+        public async Task Cassandra_CSharp_DiagnosticAsync(string sql, int sinkLine, int sinkColumn, int sourceLine, int sourceColumn)
+        {
+            await VerifyCSharpWithDependenciesAsync($@"
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using Cassandra;
+
+namespace TestNamespace
+{{
+    public partial class WebForm : System.Web.UI.Page
+    {{
+        public static string ConnectionString {{ get; set; }}
+        private ISession session = null;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {{
+            string name = Request.Form[""product_name""];
+            string query = ""{sql}"";
+            session.Execute(query);
+
+        }}
+    }}
+}}
+            ",
+            GetCSharpResultAt(sinkLine, sinkColumn, sourceLine, sourceColumn, "RowSet ISession.Execute(string cqlQuery)", "void WebForm.Page_Load(object sender, EventArgs e)", "NameValueCollection HttpRequest.Form", "void WebForm.Page_Load(object sender, EventArgs e)"));
+        }
+
+        [Fact]
+        public async Task InterfaceTest()
+        {
+            await VerifyCSharpWithDependenciesAsync(@"
+namespace VulnerableWebApp
+{
+    using System;
+    using System.Data;
+    using System.Data.SqlClient;
+    using System.Linq;
+    using System.Web;
+    using System.Web.UI;
+
+    public partial class WebForm : System.Web.UI.Page
+    {
+        public interface IBlah
+        {
+            void ProcessInput(string input);
+        }
+
+        public class BlahImplementation : IBlah
+        {
+            public void ProcessInput(string input)
+            {
+                SqlCommand sqlCommand = new SqlCommand()
+                {
+                    CommandText = input,
+                    CommandType = CommandType.Text,
+                };
+            }
+        }
+        
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            IBlah Blah = new BlahImplementation();
+            if (Request.Form != null)
+            {
+                string userInput = Request.Form[""in""];
+                //(Blah as BlahImplementation).ProcessInput(userInput);
+                Blah.ProcessInput(userInput);
+            }
+        }
+
+    }
+}
+            ",
+                GetCSharpResultAt(24, 21, 19, 31, "string SqlCommand.CommandText", "void WebForm.Page_Load(object sender, EventArgs e)", "NameValueCollection HttpRequest.Form", "void WebForm.Page_Load(object sender, EventArgs e)"));
+
+
+        }
 
         [Fact]
         public async Task EntityFramework_FromSql_Constant_NoDiagnosticAsync()
